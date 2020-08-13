@@ -57,6 +57,7 @@ GEM
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
     ast (2.4.1)
+    bcrypt (3.1.15)
     bootsnap (1.4.8)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -79,6 +80,7 @@ GEM
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
+    jwt (2.2.1)
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -192,11 +194,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   byebug
   database_cleaner
   factory_bot_rails (~> 4.0)
   faker
+  jwt
   listen (~> 3.2)
   pg
   puma (~> 4.1)
