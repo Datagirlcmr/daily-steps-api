@@ -1,6 +1,6 @@
 # Steps Tracker Api
 
-This API is made of two models
+This API is made of three models
 
 * user model
 
