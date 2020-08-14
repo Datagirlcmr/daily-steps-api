@@ -3,13 +3,13 @@ class StepsController < ApplicationController
 
     # GET /todos
     def index
-      @steps = Step.all
+      @steps = current_user.steps
       json_response(@steps)
     end
   
     # POST /todos
     def create
-      @step = Step.create!(step_params)
+      @step = current_user.steps.create!(step_params)
       json_response(@step, :created)
     end
   
