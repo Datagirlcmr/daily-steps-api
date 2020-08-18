@@ -1,30 +1,30 @@
 class StepsController < ApplicationController
   before_action :set_step, only: %i[show update destroy]
 
-  # GET /todos
+  # GET /steps
   def index
     @steps = current_user.steps
     json_response(@steps)
   end
 
-  # POST /todos
+  # POST /steps
   def create
     @step = current_user.steps.create!(step_params)
     json_response(@step, :created)
   end
 
-  # GET /todos/:id
+  # GET /steps/:id
   def show
     json_response(@step)
   end
 
-  # PUT /todos/:id
+  # PUT /steps/:id
   def update
     @step.update(step_params)
     head :no_content
   end
 
-  # DELETE /todos/:id
+  # DELETE /steps/:id
   def destroy
     @step.destroy
     head :no_content
@@ -34,7 +34,7 @@ class StepsController < ApplicationController
 
   def step_params
     # whitelist params
-    params.permit(:title, :day_recorded)
+    params.permit(:title, :day_recorded, :steps_recorded)
   end
 
   def set_step
