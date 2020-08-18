@@ -4,5 +4,5 @@ class Step < ApplicationRecord
   belongs_to :user
 
   # validations
-  validates_presence_of :title, :day_recorded
+  validates_presence_of :title, :day_recorded, steps_recorded
 end
