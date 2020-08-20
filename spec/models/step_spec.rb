@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 # Test suite for the Todo model
 RSpec.describe Step, type: :model do
   # Association test

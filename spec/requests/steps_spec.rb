@@ -10,7 +10,7 @@ RSpec.describe 'Steps API', type: :request do
 
   describe 'GET /steps' do
     # update request with headers
-    before { get '/steps' , params: {}, headers: headers }
+    before { get '/steps', params: {}, headers: headers }
 
     it 'returns steps' do
       # Note `json` is a custom helper to parse JSON responses
@@ -25,7 +25,7 @@ RSpec.describe 'Steps API', type: :request do
 
   # Test suite for GET /steps/:id
   describe 'GET /steps/:id' do
-    before { get "/steps/#{step_id}" , params: {}, headers: headers }
+    before { get "/steps/#{step_id}", params: {}, headers: headers }
 
     context 'when the record exists' do
       it 'returns the step' do
@@ -45,9 +45,9 @@ RSpec.describe 'Steps API', type: :request do
         expect(response).to have_http_status(404)
       end
 
-    #   it 'returns a not found message' do
-    #     expect(response.body).to match(/Couldn't find step/)
-    #   end
+      #   it 'returns a not found message' do
+      #     expect(response.body).to match(/Couldn't find step/)
+      #   end
     end
   end
 
@@ -78,10 +78,10 @@ RSpec.describe 'Steps API', type: :request do
         expect(response).to have_http_status(422)
       end
 
-    #   it 'returns a validation failure message' do
-    #     expect(response.body)
-    #       .to match(/Validation failed: Created by can't be blank/)
-    #   end
+      #   it 'returns a validation failure message' do
+      #     expect(response.body)
+      #       .to match(/Validation failed: Created by can't be blank/)
+      #   end
     end
   end
 
@@ -104,7 +104,7 @@ RSpec.describe 'Steps API', type: :request do
 
   # Test suite for DELETE /steps/:id
   describe 'DELETE /steps/:id' do
-    before { delete "/steps/#{step_id}" , params: {}, headers: headers  }
+    before { delete "/steps/#{step_id}", params: {}, headers: headers }
 
     it 'returns status code 204' do
       expect(response).to have_http_status(204)

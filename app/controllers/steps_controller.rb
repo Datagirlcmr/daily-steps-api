@@ -9,19 +9,20 @@ class StepsController < ApplicationController
 
   # POST /steps
   def create
-    @step = current_user.steps.create!(step_params)
-    json_response(@step, :created)
+    @step = current_user.steps.build(step_params)
+    json_response(@step, :created) if @step.save!
   end
 
   # GET /steps/:id
   def show
+    @step = Step.find(params[:id])
     json_response(@step)
   end
 
   # PUT /steps/:id
   def update
     @step.update(step_params)
-    head :no_content
+    json_response(@step)
   end
 
   # DELETE /steps/:id
@@ -33,7 +34,6 @@ class StepsController < ApplicationController
   private
 
   def step_params
-    # whitelist params
     params.permit(:title, :day_recorded, :steps_recorded)
   end
 

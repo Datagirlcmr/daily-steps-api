@@ -12,6 +12,7 @@ gem 'puma', '~> 4.1'
 gem 'rubocop', '~>0.81.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
+gem 'chronic'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

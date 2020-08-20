@@ -68,7 +68,7 @@ RSpec.describe 'Measurements API' do
 
     context 'when request attributes are valid' do
       before do
-         post "/steps/#{step_id}/measurements", params: valid_attributes, headers: headers
+        post "/steps/#{step_id}/measurements", params: valid_attributes, headers: headers
       end
 
       it 'returns status code 201' do
@@ -94,7 +94,7 @@ RSpec.describe 'Measurements API' do
     let(:valid_attributes) { { steps_recorded: 2000 }.to_json }
 
     before do
-      put "/steps/#{step_id}/measurements/#{id}", params: valid_attributes,  headers: headers
+      put "/steps/#{step_id}/measurements/#{id}", params: valid_attributes, headers: headers
     end
 
     context 'when measurement exists' do

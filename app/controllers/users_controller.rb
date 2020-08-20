@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   # POST /signup
   # return authenticated token upon signup
   def create
-    user = User.create!(user_params)
+    user = User.new(user_params)
+    user.save!
     auth_token = AuthenticateUser.new(user.email, user.password).call
     response = { message: Message.account_created, auth_token: auth_token }
     json_response(response, :created)
@@ -15,9 +16,18 @@ class UsersController < ApplicationController
   end
 
   def show
+    @result = user_profile
+    json_response(@result)
   end
 
   private
+
+  def user_profile
+    result = {
+      details: current_user
+    }
+    result
+  end
 
   def user_params
     params.permit(
