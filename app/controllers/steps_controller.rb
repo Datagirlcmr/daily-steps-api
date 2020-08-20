@@ -16,7 +16,10 @@ class StepsController < ApplicationController
   # GET /steps/:id
   def show
     @step = Step.find(params[:id])
-    json_response(@step)
+    @response = {
+      step: @step
+    }
+    json_response(@response)
   end
 
   # PUT /steps/:id
