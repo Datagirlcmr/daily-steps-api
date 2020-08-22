@@ -1,6 +1,6 @@
 class Step < ApplicationRecord
   # model association
-  has_many :measurements, dependent: :destroy
+  # has_many :measurements, dependent: :destroy
   belongs_to :user
 
   # validations
