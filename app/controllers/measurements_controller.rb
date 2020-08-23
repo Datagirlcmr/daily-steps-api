@@ -21,7 +21,6 @@ class MeasurementsController < ApplicationController
   # PUT /steps/:step_id/measurements/:id
   def update
     @measurement.update(measurement_params)
-    head :no_content
   end
 
   # DELETE /steps/:step_id/measurements/:id
